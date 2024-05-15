@@ -4,6 +4,7 @@ class MinesweeperBoard < ApplicationRecord
   before_create :generate_board
 
   validates :width, :height, :mines, presence: true
+  validates :email, format: { with: URI::MailTo::EMAIL_REGEXP, message: "must be a valid email address" }
   validate :mines_must_fit_on_board
 
   def generate_board
