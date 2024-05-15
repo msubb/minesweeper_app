@@ -1,0 +1,11 @@
+<h1>All Generated Minesweeper Boards</h1>
+<ul>
+  <% @minesweeper_boards.each do |board| %>
+    <li>
+      <%= link_to board.name, minesweeper_board_path(board) %>
+      - <%= board.email %> - <%= board.created_at.strftime("%Y-%m-%d %H:%M:%S") %>
+    </li>
+  <% end %>
+</ul>
+<%= link_to "Back to Home", root_path %>
+
